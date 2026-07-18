@@ -226,8 +226,9 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "f1a4abca6a461502",
+  "active": "9f3e43180d6f653c",
   "lastOpenFiles": [
+    "README.md",
     "02_Wiki/患者健康数据.md",
     "04_Output/开题报告/开题报告.md",
     "03_Project/AI先锋大赛-医生AI Copilot Agentic Workflow-项目核心定义.md",
@@ -254,7 +255,6 @@
     "02_Wiki/Workflow Orchestration.md",
     "02_Wiki/医疗知识库.md",
     "02_Wiki/FHIR.md",
-    "02_Wiki/PACS.md",
     "mermaid-diagram (1).png",
     "99_System/Templates",
     "99_System",
