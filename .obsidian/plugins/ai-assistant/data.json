@@ -1,0 +1,11 @@
+{
+  "mySetting": "default",
+  "openAIapiKey": "sk-1a87a0ddbf0c7f67902f565926cf6d5b3d1423e5805f4000e38983a45775a9f2",
+  "anthropicApiKey": "",
+  "modelName": "gpt-4.1",
+  "imageModelName": "dall-e-3",
+  "maxTokens": 3000,
+  "replaceSelection": false,
+  "imgFolder": "AiAssistant/Assets",
+  "language": "zh"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "conv-1784337697141-x1ny44bjz",
+  "providerId": "claude",
+  "title": "<details>\n<summary>Click to see directory creat...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1784337697141,
+  "updatedAt": 1784337716988,
+  "lastResponseAt": 1784337716988,
+  "sessionId": "0864c35e-ad44-493d-b29b-2274d5169f8a",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "0864c35e-ad44-493d-b29b-2274d5169f8a"
+  },
+  "currentNote": "开题报告.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 152,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 28928,
+    "contextWindow": 200000,
+    "contextTokens": 29080,
+    "percentage": 15,
+    "contextWindowIsAuthoritative": true
+  }
+}
