@@ -19,11 +19,11 @@
 
 ## 系统架构
 
-系统架构以 [[医疗AI Agent]] 作为智能调度中枢，由三大 Workflow 承载诊疗流程，并通过医疗数据、知识库和工程机制完成闭环。
+系统架构以 [[医疗Copilot Agent]] 作为智能调度中枢，由三大 Workflow 承载诊疗流程，并通过医疗数据、知识库和工程机制完成闭环。
 
 ```mermaid
 flowchart TD
-    A[医生] --> B[医疗AI Agent]
+    A[医生] --> B[医疗Copilot Agent]
     B --> C[诊前信息采集 Workflow]
     B --> D[诊中辅助决策 Workflow]
     B --> E[诊后医嘱执行 Workflow]
@@ -53,11 +53,13 @@ AI 能力不是独立目标，而是为医生工作流提供支撑。
 
 主要能力包括：
 
-- [[医疗AI Agent]]：负责智能调度。
+- [[医疗Copilot Agent]]：项目表达中的智能调度中枢。
+- [[医疗AI Agent]]：技术层表达中的智能调度中枢。
 - [[RAG]]：连接 [[医疗知识库]]，为诊中辅助决策提供知识增强。
 - [[Memory]]：保存跨阶段上下文，支撑连续照护。
 - [[Tool Calling]]：连接外部医疗系统和任务工具。
 - [[Human-in-the-loop]]：保证医生审核和医疗安全。
+- [[医疗隐私与最小必要原则]]：约束患者数据使用边界。
 
 这些能力共同服务于 [[医生AI Copilot]]，而不是脱离 Workflow 存在。
 
@@ -74,8 +76,9 @@ AI 能力不是独立目标，而是为医生工作流提供支撑。
 - [[FHIR]]
 - [[患者健康数据]]
 - [[医疗知识库]]
+- [[医疗隐私与最小必要原则]]
 
-其中，[[HIS]]、[[EMR]]、[[LIS]]、[[PACS]] 定位为 Copilot 的数据和工具接口来源；[[FHIR]] 定位为未来医疗数据互操作标准；[[患者健康数据]] 强调连续照护闭环的诊后反馈；[[医疗知识库]] 则为 [[RAG]] 提供知识来源。
+其中，[[HIS]]、[[EMR]]、[[LIS]]、[[PACS]] 定位为 Copilot 的数据和工具接口来源；[[FHIR]] 定位为未来医疗数据互操作标准；[[患者健康数据]] 强调连续照护闭环的诊后反馈；[[医疗知识库]] 为 [[RAG]] 提供知识来源；[[医疗隐私与最小必要原则]] 约束数据使用边界。
 
 ## 工程实现
 
@@ -110,8 +113,8 @@ AI 能力不是独立目标，而是为医生工作流提供支撑。
 - 知识建设路线：[[AI先锋大赛-医生AI Copilot Agentic Workflow-知识建设路线图]]
 - 核心概念：[[医生AI Copilot]]、[[连续照护闭环]]、[[Agentic Workflow]]
 - Workflow 层：[[诊前信息采集 Workflow]]、[[诊中辅助决策 Workflow]]、[[诊后医嘱执行 Workflow]]
-- AI 能力层：[[医疗AI Agent]]、[[RAG]]、[[Memory]]、[[Tool Calling]]、[[Human-in-the-loop]]
-- 医疗数据层：[[HIS]]、[[EMR]]、[[LIS]]、[[PACS]]、[[FHIR]]、[[患者健康数据]]、[[医疗知识库]]
+- AI 能力层：[[医疗Copilot Agent]]、[[医疗AI Agent]]、[[RAG]]、[[Memory]]、[[Tool Calling]]、[[Human-in-the-loop]]
+- 医疗数据层：[[HIS]]、[[EMR]]、[[LIS]]、[[PACS]]、[[FHIR]]、[[患者健康数据]]、[[医疗知识库]]、[[医疗隐私与最小必要原则]]
 - 工程实现层：[[Workflow Orchestration]]、[[Agent架构设计]]、[[数据流设计]]、[[模拟数据设计]]、[[评估指标]]
 
 ## 使用方式

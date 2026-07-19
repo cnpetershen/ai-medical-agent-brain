@@ -47,12 +47,12 @@
 
 |名称|建议文件路径|建设原因|依赖关系|优先级|
 |---|---|---|---|---|
-|Agent|`02_Wiki/Agent.md`|解释医疗 Copilot Agent 所需的任务理解、上下文组织和动作调度能力。|医疗Copilot Agent|P0|
-|RAG|`02_Wiki/RAG.md`|支撑医疗知识、指南、病历资料和项目资料的检索增强。|诊中辅助决策 Workflow、Agent|P0|
+|医疗AI Agent|`02_Wiki/医疗AI Agent.md`|解释医疗 Copilot Agent 所需的任务理解、上下文组织和动作调度能力。|医疗Copilot Agent|P0|
+|RAG|`02_Wiki/RAG.md`|支撑医疗知识、指南、病历资料和项目资料的检索增强。|诊中辅助决策 Workflow、医疗AI Agent|P0|
 |Memory|`02_Wiki/Memory.md`|维护患者上下文、医生偏好、流程状态和历史任务，支撑跨阶段连续照护。|连续照护闭环、医疗Copilot Agent|P0|
-|Tool Calling|`02_Wiki/Tool Calling.md`|让 Agent 调用查询、提醒、任务生成、随访管理等工具能力。|Agent、三大 Workflow|P0|
-|Human-in-the-loop|`02_Wiki/Human-in-the-loop.md`|保留医生审核和确认环节，避免 AI 自动越权。|医生主导的人机协同、Agent|P1|
-|Prompt 指令约束|`02_Wiki/Prompt 指令约束.md`|约束 Agent 输出格式、任务边界和医疗安全表达。|Agent、Human-in-the-loop|P1|
+|Tool Calling|`02_Wiki/Tool Calling.md`|让医疗AI Agent 调用查询、提醒、任务生成、随访管理等工具能力。|医疗AI Agent、三大 Workflow|P0|
+|Human-in-the-loop|`02_Wiki/Human-in-the-loop.md`|保留医生审核和确认环节，避免 AI 自动越权。|医生主导的人机协同、医疗AI Agent|P1|
+|Prompt 指令约束|`02_Wiki/Prompt 指令约束.md`|约束医疗AI Agent 输出格式、任务边界和医疗安全表达。|医疗AI Agent、Human-in-the-loop|P1|
 |Guardrails|`02_Wiki/Guardrails.md`|限制不合规、不安全或超出项目边界的 AI 行为。|可控与可追溯、Prompt 指令约束|P1|
 
 ## 阶段4：医疗数据与系统支撑
@@ -76,8 +76,8 @@
 |名称|建议文件路径|建设原因|依赖关系|优先级|
 |---|---|---|---|---|
 |Workflow Orchestration|`02_Wiki/Workflow Orchestration.md`|说明三大 Workflow 如何被触发、调度、串联和管理。|三大 Workflow、Tool Calling|P0|
-|数据接口|`02_Wiki/数据接口.md`|定义 Agent 和 Workflow 如何读取医疗系统数据或模拟数据。|HIS、EMR、LIS、PACS、医疗数据中台|P0|
-|模拟数据|`02_Wiki/模拟数据.md`|真实医疗数据涉及隐私，方案验证和比赛演示需要使用模拟数据。|医疗隐私与最小必要原则、数据接口|P0|
+|数据流设计|`02_Wiki/数据流设计.md`|定义 Agent 和 Workflow 如何读取医疗系统数据或模拟数据。|HIS、EMR、LIS、PACS、医疗数据中台|P0|
+|模拟数据设计|`02_Wiki/模拟数据设计.md`|真实医疗数据涉及隐私，方案验证和比赛演示需要使用模拟数据。|医疗隐私与最小必要原则、数据流设计|P0|
 |评估指标|`02_Wiki/评估指标.md`|衡量项目是否降低医生负担、提高流程连续性和增强任务执行质量。|连续照护闭环、三大 Workflow|P0|
 |任务状态管理|`02_Wiki/任务状态管理.md`|记录任务是否完成、是否需要医生审核、是否进入下一环节。|Workflow Orchestration、诊后医嘱执行 Workflow|P1|
 |日志与追溯|`02_Wiki/日志与追溯.md`|记录输入、输出、工具调用和医生确认结果，支撑可追溯。|可控与可追溯、Workflow Orchestration|P1|
@@ -89,6 +89,6 @@
 
 1. 先建设项目核心理解，锁定方向和边界。
 2. 再建设三大 Workflow，形成诊前、诊中、诊后的业务闭环。
-3. 然后建设 AI 能力，确保 Agent、RAG、Memory、Tool Calling 都服务于 Workflow。
+3. 然后建设 AI 能力，确保医疗AI Agent、RAG、Memory、Tool Calling 都服务于 Workflow。
 4. 接着建设医疗数据与系统知识，说明数据从哪里来、边界在哪里。
 5. 最后建设工程实现与评估知识，用于技术方案、原型演示和答辩验证。

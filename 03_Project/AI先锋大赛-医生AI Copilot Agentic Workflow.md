@@ -69,11 +69,13 @@ Workflow：
 
 AI 能力：
 
+- [[医疗Copilot Agent]]
 - [[医疗AI Agent]]
 - [[RAG]]
 - [[Memory]]
 - [[Tool Calling]]
 - [[Human-in-the-loop]]
+- [[医疗隐私与最小必要原则]]
 
 医疗数据：
 
@@ -84,6 +86,7 @@ AI 能力：
 - [[FHIR]]
 - [[患者健康数据]]
 - [[医疗知识库]]
+- [[医疗隐私与最小必要原则]]
 
 工程实现：
 

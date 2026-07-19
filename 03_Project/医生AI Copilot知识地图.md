@@ -15,11 +15,13 @@
 
 ## 3. AI能力
 
+- [[医疗Copilot Agent]]
 - [[医疗AI Agent]]
 - [[RAG]]
 - [[Memory]]
 - [[Tool Calling]]
 - [[Human-in-the-loop]]
+- [[医疗隐私与最小必要原则]]
 
 
 ## 4. 医疗数据
