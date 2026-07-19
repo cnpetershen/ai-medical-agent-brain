@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "c0d09dfd7df961b8",
+        "id": "0d390cbc4ae52938",
         "type": "tabs",
         "children": [
           {
-            "id": "a8c521bca9410092",
+            "id": "c68965d5a1963d22",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "04_Output/开题报告/开题报告.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "开题报告"
+              "title": "新标签页"
             }
           }
         ]
@@ -226,45 +222,45 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "a8c521bca9410092",
+  "active": "c68965d5a1963d22",
   "lastOpenFiles": [
+    "99_System/Templates/项目模板.md",
+    "99_System/Templates/技术方案模板.md",
+    "02_Wiki/风险画像.md",
+    "04_Output/Demo实施包/落地评估与实施计划.md",
+    "04_Output/Demo实施包/data/risk_profile_wang_001.json",
+    "04_Output/Demo实施包/data/patient_memory_wang_001.json",
+    "04_Output/Demo实施包/Agent架构强化说明.md",
+    "04_Output/Demo实施包/README.md",
+    "04_Output/Demo实施包/验收清单.md",
+    "04_Output/Demo实施包/演示脚本.md",
+    "04_Output/Demo实施包/dify/prompts.md",
+    "04_Output/Demo实施包/dify/build_steps.md",
     "04_Output/开题报告/开题报告.md",
+    "04_Output/Demo实施包/dify/tool_schemas.json",
+    "04_Output/Demo实施包/data/knowledge_hypertension_demo.md",
+    "04_Output/Demo实施包/data/followup_events.jsonl",
+    "04_Output/Demo实施包/data/followup_tasks.jsonl",
+    "04_Output/Demo实施包/data/patient_wang_001.json",
+    "04_Output/Demo实施包/dify",
+    "04_Output/Demo实施包/data",
+    "04_Output/Demo实施包",
+    "99_System/CODEX_RULES.md",
+    "00_Inbox/02_项目需求输入/项目需求输入模板.md",
     "01_Raw/参考资料/开题报告/开题报告参考资料清单-外部检索核验.md",
     "00_Inbox/03_外部资料待分流/外部资料接收清单.md",
     "01_Raw/参考资料/开题报告/README.md",
     "01_Raw/参考资料/开题报告",
-    "01_Raw/参考资料",
     "00_Inbox/02_项目需求输入/AI先锋大赛-医生AI Copilot Agentic Workflow-需求输入表.md",
-    "00_Inbox/02_项目需求输入/项目需求输入模板.md",
     "00_Inbox/00_Inbox使用说明.md",
-    "00_Inbox/03_外部资料待分流",
     "00_Inbox/04_问题与假设/项目问题与假设清单.md",
     "00_Inbox/03_K3资料待分流/K3资料接收清单.md",
-    "00_Inbox/05_待分流处理",
-    "00_Inbox/04_问题与假设",
-    "00_Inbox/03_K3资料待分流",
-    "00_Inbox/02_项目需求输入",
-    "00_Inbox/01_快速捕捉",
     "03_Project/医生AI Copilot知识地图.md",
     "02_Wiki/医疗AI Agent.md",
     "02_Wiki/医疗隐私与最小必要原则.md",
     "02_Wiki/医疗Copilot Agent.md",
     "README.md",
-    "02_Wiki/患者健康数据.md",
-    "03_Project/AI先锋大赛-医生AI Copilot Agentic Workflow-项目核心定义.md",
-    "03_Project/AI先锋大赛-医生AI Copilot Agentic Workflow.md",
-    "99_System/Templates/技术方案模板.md",
-    "99_System/Templates/项目模板.md",
-    "99_System/Templates/Wiki知识模板.md",
-    "02_Wiki/诊中辅助决策 Workflow.md",
-    "02_Wiki/诊前信息采集 Workflow.md",
-    "Excalidraw/Drawing 2026-07-18 19.01.38.excalidraw.md",
-    "99_System/CODEX_RULES.md",
-    "03_Project/AI先锋大赛-医生AI Copilot Agentic Workflow-知识建设路线图.md",
-    "02_Wiki/评估指标.md",
-    "Excalidraw",
     "mermaid-diagram (1).png",
-    "99_System/Templates",
     "04_Output/开题报告/mermaid-diagram.png",
     "未命名.canvas"
   ]

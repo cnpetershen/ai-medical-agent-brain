@@ -50,6 +50,7 @@
 |医疗AI Agent|`02_Wiki/医疗AI Agent.md`|解释医疗 Copilot Agent 所需的任务理解、上下文组织和动作调度能力。|医疗Copilot Agent|P0|
 |RAG|`02_Wiki/RAG.md`|支撑医疗知识、指南、病历资料和项目资料的检索增强。|诊中辅助决策 Workflow、医疗AI Agent|P0|
 |Memory|`02_Wiki/Memory.md`|维护患者上下文、医生偏好、流程状态和历史任务，支撑跨阶段连续照护。|连续照护闭环、医疗Copilot Agent|P0|
+|风险画像|`02_Wiki/风险画像.md`|基于 Patient Memory 与诊后反馈维护医生关注优先级，突出诊后反馈回流创新点。|Memory、连续照护闭环、诊后医嘱执行 Workflow|P0|
 |Tool Calling|`02_Wiki/Tool Calling.md`|让医疗AI Agent 调用查询、提醒、任务生成、随访管理等工具能力。|医疗AI Agent、三大 Workflow|P0|
 |Human-in-the-loop|`02_Wiki/Human-in-the-loop.md`|保留医生审核和确认环节，避免 AI 自动越权。|医生主导的人机协同、医疗AI Agent|P1|
 |Prompt 指令约束|`02_Wiki/Prompt 指令约束.md`|约束医疗AI Agent 输出格式、任务边界和医疗安全表达。|医疗AI Agent、Human-in-the-loop|P1|

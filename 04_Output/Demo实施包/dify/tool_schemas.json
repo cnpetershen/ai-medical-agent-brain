@@ -1,0 +1,122 @@
+{
+  "version": "demo-v1",
+  "note": "这些 schema 用于 Dify 工具配置或接口模拟。正式服务可先不实现真实后端，演示时用固定 JSON 返回。Patient Memory 和风险画像是 Agent 架构核心，不是普通展示字段。",
+  "tools": [
+    {
+      "name": "get_patient_profile",
+      "description": "查询模拟患者档案、病史、当前用药和上次就诊摘要。",
+      "input_schema": {
+        "type": "object",
+        "required": ["patient_id"],
+        "properties": {
+          "patient_id": { "type": "string", "example": "SIM-HTN-001" }
+        }
+      },
+      "output_ref": "../data/patient_wang_001.json"
+    },
+    {
+      "name": "get_patient_memory",
+      "description": "读取医生确认后的 Patient Memory，用于维持跨诊前、诊中、诊后的连续上下文。",
+      "input_schema": {
+        "type": "object",
+        "required": ["patient_id"],
+        "properties": {
+          "patient_id": { "type": "string", "example": "SIM-HTN-001" }
+        }
+      },
+      "output_ref": "../data/patient_memory_wang_001.json"
+    },
+    {
+      "name": "update_patient_memory",
+      "description": "在医生确认后写回 Patient Memory。未经医生确认的 AI 草稿不得调用该工具。",
+      "input_schema": {
+        "type": "object",
+        "required": ["patient_id", "confirmed_memory_patch", "doctor_confirmation_id"],
+        "properties": {
+          "patient_id": { "type": "string", "example": "SIM-HTN-001" },
+          "confirmed_memory_patch": {
+            "type": "object",
+            "description": "医生确认后允许写回的记忆增量，例如诊后反馈摘要、异常事件、下次复诊关注点。"
+          },
+          "doctor_confirmation_id": { "type": "string", "example": "HITL-POST-001" }
+        }
+      },
+      "output": { "updated": true, "requires_doctor_confirmation": true }
+    },
+    {
+      "name": "get_risk_profile",
+      "description": "读取 Demo 风险画像，用于提示医生关注优先级。风险画像不代表真实临床风险分层。",
+      "input_schema": {
+        "type": "object",
+        "required": ["patient_id"],
+        "properties": {
+          "patient_id": { "type": "string", "example": "SIM-HTN-001" }
+        }
+      },
+      "output_ref": "../data/risk_profile_wang_001.json"
+    },
+    {
+      "name": "get_recent_vitals",
+      "description": "查询模拟患者近期家庭血压记录。",
+      "input_schema": {
+        "type": "object",
+        "required": ["patient_id", "days"],
+        "properties": {
+          "patient_id": { "type": "string", "example": "SIM-HTN-001" },
+          "days": { "type": "integer", "example": 14 }
+        }
+      },
+      "output_path": "$.recent_vitals"
+    },
+    {
+      "name": "search_medical_knowledge",
+      "description": "检索高血压指南和药品说明书 Demo 知识片段，返回带来源的内容。",
+      "input_schema": {
+        "type": "object",
+        "required": ["query"],
+        "properties": {
+          "query": { "type": "string", "example": "高血压复诊 家庭血压 连续偏高 用药原则" }
+        }
+      },
+      "knowledge_file": "../data/knowledge_hypertension_demo.md"
+    },
+    {
+      "name": "create_followup_tasks",
+      "description": "根据医生确认后的医嘱生成随访任务。AI 不得在未确认时调用该工具。",
+      "input_schema": {
+        "type": "object",
+        "required": ["patient_id", "confirmed_order"],
+        "properties": {
+          "patient_id": { "type": "string", "example": "SIM-HTN-001" },
+          "confirmed_order": { "type": "string", "description": "医生确认后的医嘱或管理计划文本" }
+        }
+      },
+      "output_ref": "../data/followup_tasks.jsonl"
+    },
+    {
+      "name": "record_patient_feedback",
+      "description": "记录患者对随访任务的执行反馈。",
+      "input_schema": {
+        "type": "object",
+        "required": ["task_id", "feedback"],
+        "properties": {
+          "task_id": { "type": "string", "example": "TASK-002" },
+          "feedback": { "type": "object" }
+        }
+      },
+      "output": { "recorded": true }
+    },
+    {
+      "name": "get_followup_status",
+      "description": "汇总 7 天随访执行状态、异常标记和可回流到下一次诊前的摘要。",
+      "input_schema": {
+        "type": "object",
+        "required": ["patient_id"],
+        "properties": {
+          "patient_id": { "type": "string", "example": "SIM-HTN-001" }
+        }
+      },
+      "output_ref": "../data/followup_events.jsonl"
+    }
+  ]
+}

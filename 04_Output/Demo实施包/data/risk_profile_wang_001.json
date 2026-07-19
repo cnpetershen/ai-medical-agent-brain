@@ -1,0 +1,44 @@
+{
+  "patient_id": "SIM-HTN-001",
+  "profile_type": "demo_risk_profile",
+  "privacy_note": "虚构风险画像，仅用于 Demo 风险提示，不代表真实临床风险分层。",
+  "generated_from": [
+    "patient_wang_001.json",
+    "followup_events.jsonl",
+    "doctor_confirmed_context"
+  ],
+  "overall_demo_risk_level": "需要医生重点关注",
+  "risk_dimensions": [
+    {
+      "dimension": "血压控制风险",
+      "level": "中-高",
+      "evidence": "近两周多次家庭血压约 150-165/92-100 mmHg；随访第 3 天仍报告 158/96、160/98。",
+      "doctor_action": "复诊时核对测量方法、连续记录、症状变化和是否需进一步检查。"
+    },
+    {
+      "dimension": "用药依从性风险",
+      "level": "中",
+      "evidence": "诊前自述近两周漏服 2 次；随访第 4 天再次漏服。",
+      "doctor_action": "核对漏服原因、用药理解和可执行提醒方式。"
+    },
+    {
+      "dimension": "症状变化风险",
+      "level": "中",
+      "evidence": "诊前有间断头晕；随访第 3 天头晕较前明显，后续减轻。",
+      "doctor_action": "医生确认是否需要进一步评估或提前复诊。"
+    },
+    {
+      "dimension": "生活方式风险",
+      "level": "中",
+      "evidence": "饮食偏咸、睡眠不足、运动不规律；随访第 6 天仅部分做到低盐。",
+      "doctor_action": "将生活方式干预转为患者能理解和执行的具体目标。"
+    },
+    {
+      "dimension": "连续照护断点风险",
+      "level": "高",
+      "evidence": "如果诊后反馈不回流，医生下次复诊前难以快速看到漏服、异常血压和症状变化。",
+      "doctor_action": "将诊后反馈摘要置于下一次诊前摘要顶部。"
+    }
+  ],
+  "guardrail": "风险画像只做医生关注优先级提示，不输出诊断结论，不自动调整医嘱。"
+}

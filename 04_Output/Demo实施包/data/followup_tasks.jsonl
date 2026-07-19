@@ -1,0 +1,5 @@
+{"task_id":"TASK-001","patient_id":"SIM-HTN-001","type":"medication","title":"继续按医生确认方案服用降压药","schedule":"每日早晨","status":"pending","source":"医生确认后的医嘱","requires_doctor_confirmation":true}
+{"task_id":"TASK-002","patient_id":"SIM-HTN-001","type":"monitoring","title":"家庭血压监测并记录数值","schedule":"每日早晚各 1 次，连续 7 天","status":"pending","source":"医生确认后的医嘱","requires_doctor_confirmation":true}
+{"task_id":"TASK-003","patient_id":"SIM-HTN-001","type":"lifestyle","title":"低盐饮食、规律作息、适度运动","schedule":"每日","status":"pending","source":"医生确认后的健康管理建议","requires_doctor_confirmation":true}
+{"task_id":"TASK-004","patient_id":"SIM-HTN-001","type":"review","title":"完善肾功能、电解质等相关检查","schedule":"1-2 周内按医生安排复查","status":"pending","source":"医生确认后的复查要求","requires_doctor_confirmation":true}
+{"task_id":"TASK-005","patient_id":"SIM-HTN-001","type":"followup","title":"携带 7 天家庭血压记录复诊或线上随访","schedule":"7 天后","status":"pending","source":"医生确认后的随访要求","requires_doctor_confirmation":true}
