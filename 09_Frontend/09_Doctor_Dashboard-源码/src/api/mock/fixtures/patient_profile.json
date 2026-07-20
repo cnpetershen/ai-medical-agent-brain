@@ -1,0 +1,141 @@
+{
+ "patient_id": "SIM-HTN-001",
+ "profile": {
+  "name_alias": "王某",
+  "sex": "男",
+  "age": 58,
+  "visit_type": "高血压复诊",
+  "chief_complaint": "近两周自测血压偏高，伴间断头晕，前来复诊。"
+ },
+ "history": {
+  "present_illness": "患者自述近两周晨起家庭血压多在 150-165/92-100 mmHg，偶有头晕，无胸痛、胸闷、肢体无力、言语不清。近期工作压力较大，晚睡，饮食偏咸。",
+  "hypertension_history": "高血压病史 3 年，既往最高血压约 168/102 mmHg。",
+  "past_history": "否认糖尿病、冠心病、脑卒中病史。无明确肾病史。",
+  "allergy_history": "未诉明确药物过敏史。",
+  "family_history": "父亲有高血压病史。",
+  "lifestyle": {
+   "smoking": "已戒烟 5 年",
+   "alcohol": "偶尔饮酒",
+   "salt_intake": "偏咸",
+   "exercise": "每周散步 1-2 次，不规律",
+   "sleep": "近 2 周睡眠不足"
+  }
+ },
+ "current_medications": [
+  {
+   "name": "氨氯地平片",
+   "dose": "5 mg",
+   "frequency": "每日 1 次",
+   "adherence": "近两周漏服 2 次",
+   "note": "患者自述未自行加量"
+  }
+ ],
+ "previous_visit_summary": {
+  "date": "2026-04-18",
+  "summary": "规律服用氨氯地平 5 mg qd，建议家庭血压监测、低盐饮食、规律运动，3 个月后复诊。",
+  "confirmed_by_doctor": true
+ },
+ "privacy_note": "完全虚构模拟数据，仅用于 Demo，不对应任何真实患者。",
+ "recent_vitals": [
+  {
+   "date": "2026-07-06",
+   "time": "07:20",
+   "sbp": 152,
+   "dbp": 94,
+   "heart_rate": 78,
+   "source": "home_bp"
+  },
+  {
+   "date": "2026-07-07",
+   "time": "07:10",
+   "sbp": 158,
+   "dbp": 96,
+   "heart_rate": 82,
+   "source": "home_bp"
+  },
+  {
+   "date": "2026-07-09",
+   "time": "21:30",
+   "sbp": 161,
+   "dbp": 98,
+   "heart_rate": 84,
+   "source": "home_bp"
+  },
+  {
+   "date": "2026-07-11",
+   "time": "07:15",
+   "sbp": 149,
+   "dbp": 92,
+   "heart_rate": 76,
+   "source": "home_bp"
+  },
+  {
+   "date": "2026-07-13",
+   "time": "07:25",
+   "sbp": 164,
+   "dbp": 100,
+   "heart_rate": 86,
+   "source": "home_bp"
+  },
+  {
+   "date": "2026-07-15",
+   "time": "21:20",
+   "sbp": 156,
+   "dbp": 95,
+   "heart_rate": 80,
+   "source": "home_bp"
+  },
+  {
+   "date": "2026-07-18",
+   "time": "07:05",
+   "sbp": 162,
+   "dbp": 97,
+   "heart_rate": 83,
+   "source": "home_bp"
+  }
+ ],
+ "risk_profile": {
+  "patient_id": "SIM-HTN-001",
+  "profile_type": "demo_risk_profile",
+  "privacy_note": "虚构风险画像，仅用于 Demo 风险提示，不代表真实临床风险分层。",
+  "generated_from": [
+   "patient_wang_001.json",
+   "followup_events.jsonl",
+   "doctor_confirmed_context"
+  ],
+  "overall_demo_risk_level": "需要医生重点关注",
+  "risk_dimensions": [
+   {
+    "dimension": "血压控制风险",
+    "level": "中-高",
+    "evidence": "近两周多次家庭血压约 150-165/92-100 mmHg；随访第 3 天仍报告 158/96、160/98。",
+    "doctor_action": "复诊时核对测量方法、连续记录、症状变化和是否需进一步检查。"
+   },
+   {
+    "dimension": "用药依从性风险",
+    "level": "中",
+    "evidence": "诊前自述近两周漏服 2 次；随访第 4 天再次漏服。",
+    "doctor_action": "核对漏服原因、用药理解和可执行提醒方式。"
+   },
+   {
+    "dimension": "症状变化风险",
+    "level": "中",
+    "evidence": "诊前有间断头晕；随访第 3 天头晕较前明显，后续减轻。",
+    "doctor_action": "医生确认是否需要进一步评估或提前复诊。"
+   },
+   {
+    "dimension": "生活方式风险",
+    "level": "中",
+    "evidence": "饮食偏咸、睡眠不足、运动不规律；随访第 6 天仅部分做到低盐。",
+    "doctor_action": "将生活方式干预转为患者能理解和执行的具体目标。"
+   },
+   {
+    "dimension": "连续照护断点风险",
+    "level": "高",
+    "evidence": "如果诊后反馈不回流，医生下次复诊前难以快速看到漏服、异常血压和症状变化。",
+    "doctor_action": "将诊后反馈摘要置于下一次诊前摘要顶部。"
+   }
+  ],
+  "guardrail": "风险画像只做医生关注优先级提示，不输出诊断结论，不自动调整医嘱。"
+ }
+}

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "04_Output/Demo实施包/workflows/Workflow Mapping.md",
+                "file": "04_Output/Demo实施包/落地评估与实施计划.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Workflow Mapping"
+              "title": "落地评估与实施计划"
             }
           }
         ]
@@ -209,7 +209,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 444.5
+    "width": 444.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -228,17 +229,29 @@
   },
   "active": "597cb02c9ea53f72",
   "lastOpenFiles": [
-    "08_API_Service/review_state/post_visit-SIM-HTN-001-20260720093117.json",
-    "05_Runtime/backend/runtime_state/post_visit-SIM-HTN-001-20260720093117.log",
-    "05_Runtime/backend/runtime_state/post_visit-SIM-HTN-001-20260720093117.json",
-    "05_Runtime/backend/runtime_state/during_visit-SIM-HTN-001-20260720093116.log",
-    "05_Runtime/backend/runtime_state/during_visit-SIM-HTN-001-20260720093116.json",
-    "05_Runtime/backend/runtime_state/pre_visit-SIM-HTN-001-20260720093116.log",
-    "05_Runtime/backend/runtime_state/pre_visit-SIM-HTN-001-20260720093116.json",
-    "08_API_Service/review_state/post_visit-SIM-HTN-001-20260720092607.json",
-    "05_Runtime/backend/runtime_state/post_visit-SIM-HTN-001-20260720092607.log",
-    "05_Runtime/backend/runtime_state/post_visit-SIM-HTN-001-20260720092607.json",
-    "05_Runtime/backend/runtime_state/during_visit-SIM-HTN-001-20260720092607.log",
+    "09_Frontend/09_Doctor_Dashboard-源码/vite-server.err.log",
+    "09_Frontend/09_Doctor_Dashboard-源码/vite-server.log",
+    "09_Frontend/09_Doctor_Dashboard-源码/dist/assets/index-vURqHYmp.js",
+    "09_Frontend/09_Doctor_Dashboard-源码/dist/assets/index-AmaImQIH.css",
+    "09_Frontend/09_Doctor_Dashboard-源码/dist/index.html",
+    "09_Frontend/09_Doctor_Dashboard-源码/dist/assets",
+    "09_Frontend/09_Doctor_Dashboard-源码/dist",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/@esbuild/win32-x64/README.md",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/@esbuild/win32-x64/package.json",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/@esbuild/win32-x64/esbuild.exe",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/@rollup/rollup-win32-x64-gnu/rollup.win32-x64-gnu.node",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/vite/dist/node/types.d-aGj9QkWt.d.ts",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/vite/LICENSE.md",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/rollup/README.md",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/@babel/parser/README.md",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/@babel/parser/CHANGELOG.md",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/@vue/runtime-dom/README.md",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/@types/estree/README.md",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/source-map-js/README.md",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/estree-walker/README.md",
+    "09_Frontend/09_Doctor_Dashboard-源码/node_modules/@vue/shared/README.md",
+    "09_Frontend/09_Doctor_Dashboard-源码/README.md",
+    "04_Output/Demo实施包/workflows/Workflow Mapping.md",
     "07_API_Spec/Runtime API Spec.md",
     "06_Demo_Interface/Demo Presentation Data.md",
     "06_Demo_Interface/Demo Screen Flow.md",
@@ -250,20 +263,8 @@
     "04_Output/Demo实施包/orchestration/Agent Orchestration Spec.md",
     "04_Output/Demo实施包/Agent架构强化说明.md",
     "04_Output/Demo实施包/落地评估与实施计划.md",
-    "04_Output/Demo实施包/workflows/Workflow Mapping.md",
     "99_System/Templates/项目模板.md",
     "99_System/Templates/技术方案模板.md",
-    "02_Wiki/风险画像.md",
-    "04_Output/Demo实施包/README.md",
-    "04_Output/Demo实施包/验收清单.md",
-    "04_Output/Demo实施包/演示脚本.md",
-    "04_Output/Demo实施包/dify/prompts.md",
-    "04_Output/Demo实施包/dify/build_steps.md",
-    "04_Output/开题报告/开题报告.md",
-    "04_Output/Demo实施包/data/knowledge_hypertension_demo.md",
-    "99_System/CODEX_RULES.md",
-    "00_Inbox/02_项目需求输入/项目需求输入模板.md",
-    "01_Raw/参考资料/开题报告/开题报告参考资料清单-外部检索核验.md",
     "mermaid-diagram (1).png",
     "04_Output/开题报告/mermaid-diagram.png",
     "未命名.canvas"

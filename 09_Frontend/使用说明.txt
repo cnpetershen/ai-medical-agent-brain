@@ -1,0 +1,13 @@
+【最简单用法——不用装任何东西】
+双击「医生工作台-双击打开.html」，用浏览器（推荐 Chrome / Edge）打开即可。
+页面数据是内置 Mock 数据（与真实 Runtime API 契约一致），三个页面都可以点，
+每页的 approve / modify / reject 按钮都可以交互。
+
+【想连真实后端 / 继续开发】
+才需要用到「09_Doctor_Dashboard-源码」目录：
+1. 安装 Node.js（官网 https://nodejs.org 下载 LTS 版，一路下一步）
+2. 在源码目录打开命令行，依次执行：
+   npm install
+   npm run dev
+3. 浏览器打开命令行里显示的地址（默认 http://localhost:5173）
+详细说明见源码目录里的 README.md。

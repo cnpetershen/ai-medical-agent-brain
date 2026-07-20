@@ -1,0 +1,418 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v23.11.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\.npmrc
+5 silly config load:file:C:\Users\peter.DESKTOP-A6GC386\.npmrc
+6 silly config load:file:C:\Users\peter.DESKTOP-A6GC386\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm ci
+8 verbose argv "ci" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\.npm-cache\_logs\2026-07-20T04_07_00_885Z-
+10 verbose logfile D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\.npm-cache\_logs\2026-07-20T04_07_00_885Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 silly idealTree buildDeps
+14 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with EACCES
+15 silly reify moves {}
+16 silly audit bulk request {
+16 silly audit   '@babel/helper-string-parser': [ '7.29.7' ],
+16 silly audit   '@babel/helper-validator-identifier': [ '7.29.7' ],
+16 silly audit   '@babel/parser': [ '7.29.7' ],
+16 silly audit   '@babel/types': [ '7.29.7' ],
+16 silly audit   '@esbuild/aix-ppc64': [ '0.21.5' ],
+16 silly audit   '@esbuild/android-arm': [ '0.21.5' ],
+16 silly audit   '@esbuild/android-arm64': [ '0.21.5' ],
+16 silly audit   '@esbuild/android-x64': [ '0.21.5' ],
+16 silly audit   '@esbuild/darwin-arm64': [ '0.21.5' ],
+16 silly audit   '@esbuild/darwin-x64': [ '0.21.5' ],
+16 silly audit   '@esbuild/freebsd-arm64': [ '0.21.5' ],
+16 silly audit   '@esbuild/freebsd-x64': [ '0.21.5' ],
+16 silly audit   '@esbuild/linux-arm': [ '0.21.5' ],
+16 silly audit   '@esbuild/linux-arm64': [ '0.21.5' ],
+16 silly audit   '@esbuild/linux-ia32': [ '0.21.5' ],
+16 silly audit   '@esbuild/linux-loong64': [ '0.21.5' ],
+16 silly audit   '@esbuild/linux-mips64el': [ '0.21.5' ],
+16 silly audit   '@esbuild/linux-ppc64': [ '0.21.5' ],
+16 silly audit   '@esbuild/linux-riscv64': [ '0.21.5' ],
+16 silly audit   '@esbuild/linux-s390x': [ '0.21.5' ],
+16 silly audit   '@esbuild/linux-x64': [ '0.21.5' ],
+16 silly audit   '@esbuild/netbsd-x64': [ '0.21.5' ],
+16 silly audit   '@esbuild/openbsd-x64': [ '0.21.5' ],
+16 silly audit   '@esbuild/sunos-x64': [ '0.21.5' ],
+16 silly audit   '@esbuild/win32-arm64': [ '0.21.5' ],
+16 silly audit   '@esbuild/win32-ia32': [ '0.21.5' ],
+16 silly audit   '@esbuild/win32-x64': [ '0.21.5' ],
+16 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+16 silly audit   '@rollup/rollup-android-arm-eabi': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-android-arm64': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-darwin-arm64': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-darwin-x64': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-freebsd-arm64': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-freebsd-x64': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-linux-arm-gnueabihf': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-linux-arm-musleabihf': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-linux-arm64-gnu': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-linux-arm64-musl': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-linux-loong64-gnu': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-linux-loong64-musl': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-linux-ppc64-gnu': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-linux-ppc64-musl': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-linux-riscv64-gnu': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-linux-riscv64-musl': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-linux-s390x-gnu': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-linux-x64-gnu': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-linux-x64-musl': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-openbsd-x64': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-openharmony-arm64': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-win32-arm64-msvc': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-win32-ia32-msvc': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-win32-x64-gnu': [ '4.62.2' ],
+16 silly audit   '@rollup/rollup-win32-x64-msvc': [ '4.62.2' ],
+16 silly audit   '@types/estree': [ '1.0.9' ],
+16 silly audit   '@vitejs/plugin-vue': [ '5.2.4' ],
+16 silly audit   '@vue/compiler-core': [ '3.5.40' ],
+16 silly audit   '@vue/compiler-dom': [ '3.5.40' ],
+16 silly audit   '@vue/compiler-sfc': [ '3.5.40' ],
+16 silly audit   '@vue/compiler-ssr': [ '3.5.40' ],
+16 silly audit   '@vue/devtools-api': [ '6.6.4' ],
+16 silly audit   '@vue/reactivity': [ '3.5.40' ],
+16 silly audit   '@vue/runtime-core': [ '3.5.40' ],
+16 silly audit   '@vue/runtime-dom': [ '3.5.40' ],
+16 silly audit   '@vue/server-renderer': [ '3.5.40' ],
+16 silly audit   '@vue/shared': [ '3.5.40' ],
+16 silly audit   csstype: [ '3.2.3' ],
+16 silly audit   entities: [ '7.0.1' ],
+16 silly audit   esbuild: [ '0.21.5' ],
+16 silly audit   'estree-walker': [ '2.0.2' ],
+16 silly audit   fsevents: [ '2.3.3' ],
+16 silly audit   'magic-string': [ '0.30.21' ],
+16 silly audit   nanoid: [ '3.3.16' ],
+16 silly audit   picocolors: [ '1.1.1' ],
+16 silly audit   postcss: [ '8.5.20' ],
+16 silly audit   rollup: [ '4.62.2' ],
+16 silly audit   'source-map-js': [ '1.2.1' ],
+16 silly audit   vite: [ '5.4.21' ],
+16 silly audit   vue: [ '3.5.40' ],
+16 silly audit   'vue-router': [ '4.6.4' ]
+16 silly audit }
+17 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\fsevents
+18 silly reify mark deleted [
+18 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\fsevents'
+18 silly reify ]
+19 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-win32-ia32-msvc
+20 silly reify mark deleted [
+20 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-win32-ia32-msvc'
+20 silly reify ]
+21 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-win32-arm64-msvc
+22 silly reify mark deleted [
+22 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-win32-arm64-msvc'
+22 silly reify ]
+23 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-openharmony-arm64
+24 silly reify mark deleted [
+24 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-openharmony-arm64'
+24 silly reify ]
+25 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-openbsd-x64
+26 silly reify mark deleted [
+26 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-openbsd-x64'
+26 silly reify ]
+27 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-linux-x64-musl
+28 silly reify mark deleted [
+28 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-linux-x64-musl'
+28 silly reify ]
+29 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-linux-x64-gnu
+30 silly reify mark deleted [
+30 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-linux-x64-gnu'
+30 silly reify ]
+31 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-linux-s390x-gnu
+32 silly reify mark deleted [
+32 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-linux-s390x-gnu'
+32 silly reify ]
+33 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-linux-riscv64-musl
+34 silly reify mark deleted [
+34 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-linux-riscv64-musl'
+34 silly reify ]
+35 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-linux-riscv64-gnu
+36 silly reify mark deleted [
+36 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-linux-riscv64-gnu'
+36 silly reify ]
+37 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-linux-ppc64-musl
+38 silly reify mark deleted [
+38 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-linux-ppc64-musl'
+38 silly reify ]
+39 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-linux-ppc64-gnu
+40 silly reify mark deleted [
+40 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-linux-ppc64-gnu'
+40 silly reify ]
+41 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-linux-loong64-musl
+42 silly reify mark deleted [
+42 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-linux-loong64-musl'
+42 silly reify ]
+43 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-linux-loong64-gnu
+44 silly reify mark deleted [
+44 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-linux-loong64-gnu'
+44 silly reify ]
+45 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-linux-arm64-musl
+46 silly reify mark deleted [
+46 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-linux-arm64-musl'
+46 silly reify ]
+47 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-linux-arm64-gnu
+48 silly reify mark deleted [
+48 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-linux-arm64-gnu'
+48 silly reify ]
+49 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-linux-arm-musleabihf
+50 silly reify mark deleted [
+50 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-linux-arm-musleabihf'
+50 silly reify ]
+51 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-linux-arm-gnueabihf
+52 silly reify mark deleted [
+52 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-linux-arm-gnueabihf'
+52 silly reify ]
+53 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-freebsd-x64
+54 silly reify mark deleted [
+54 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-freebsd-x64'
+54 silly reify ]
+55 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-freebsd-arm64
+56 silly reify mark deleted [
+56 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-freebsd-arm64'
+56 silly reify ]
+57 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-darwin-x64
+58 silly reify mark deleted [
+58 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-darwin-x64'
+58 silly reify ]
+59 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-darwin-arm64
+60 silly reify mark deleted [
+60 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-darwin-arm64'
+60 silly reify ]
+61 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-android-arm64
+62 silly reify mark deleted [
+62 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-android-arm64'
+62 silly reify ]
+63 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@rollup\rollup-android-arm-eabi
+64 silly reify mark deleted [
+64 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@rollup\\rollup-android-arm-eabi'
+64 silly reify ]
+65 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\win32-ia32
+66 silly reify mark deleted [
+66 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\win32-ia32'
+66 silly reify ]
+67 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\win32-arm64
+68 silly reify mark deleted [
+68 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\win32-arm64'
+68 silly reify ]
+69 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\sunos-x64
+70 silly reify mark deleted [
+70 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\sunos-x64'
+70 silly reify ]
+71 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\openbsd-x64
+72 silly reify mark deleted [
+72 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\openbsd-x64'
+72 silly reify ]
+73 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\netbsd-x64
+74 silly reify mark deleted [
+74 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\netbsd-x64'
+74 silly reify ]
+75 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\linux-x64
+76 silly reify mark deleted [
+76 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\linux-x64'
+76 silly reify ]
+77 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\linux-s390x
+78 silly reify mark deleted [
+78 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\linux-s390x'
+78 silly reify ]
+79 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\linux-riscv64
+80 silly reify mark deleted [
+80 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\linux-riscv64'
+80 silly reify ]
+81 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\linux-ppc64
+82 silly reify mark deleted [
+82 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\linux-ppc64'
+82 silly reify ]
+83 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\linux-mips64el
+84 silly reify mark deleted [
+84 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\linux-mips64el'
+84 silly reify ]
+85 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\linux-loong64
+86 silly reify mark deleted [
+86 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\linux-loong64'
+86 silly reify ]
+87 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\linux-ia32
+88 silly reify mark deleted [
+88 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\linux-ia32'
+88 silly reify ]
+89 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\linux-arm64
+90 silly reify mark deleted [
+90 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\linux-arm64'
+90 silly reify ]
+91 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\linux-arm
+92 silly reify mark deleted [
+92 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\linux-arm'
+92 silly reify ]
+93 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\freebsd-x64
+94 silly reify mark deleted [
+94 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\freebsd-x64'
+94 silly reify ]
+95 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\freebsd-arm64
+96 silly reify mark deleted [
+96 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\freebsd-arm64'
+96 silly reify ]
+97 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\darwin-x64
+98 silly reify mark deleted [
+98 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\darwin-x64'
+98 silly reify ]
+99 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\darwin-arm64
+100 silly reify mark deleted [
+100 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\darwin-arm64'
+100 silly reify ]
+101 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\android-x64
+102 silly reify mark deleted [
+102 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\android-x64'
+102 silly reify ]
+103 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\android-arm64
+104 silly reify mark deleted [
+104 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\android-arm64'
+104 silly reify ]
+105 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\android-arm
+106 silly reify mark deleted [
+106 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\android-arm'
+106 silly reify ]
+107 verbose reify failed optional dependency D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\node_modules\@esbuild\aix-ppc64
+108 silly reify mark deleted [
+108 silly reify   'D:\\计算机运行笔记\\AI-Medical-Agent-Brain\\09_Frontend\\09_Doctor_Dashboard-源码\\node_modules\\@esbuild\\aix-ppc64'
+108 silly reify ]
+109 http cache vue-router@https://registry.npmmirror.com/vue-router/-/vue-router-4.6.4.tgz 0ms (cache hit)
+110 http cache vite@https://registry.npmmirror.com/vite/-/vite-5.4.21.tgz 0ms (cache hit)
+111 http cache rollup@https://registry.npmmirror.com/rollup/-/rollup-4.62.2.tgz 0ms (cache hit)
+112 http cache source-map-js@https://registry.npmmirror.com/source-map-js/-/source-map-js-1.2.1.tgz 0ms (cache hit)
+113 http cache postcss@https://registry.npmmirror.com/postcss/-/postcss-8.5.20.tgz 0ms (cache hit)
+114 http cache picocolors@https://registry.npmmirror.com/picocolors/-/picocolors-1.1.1.tgz 0ms (cache hit)
+115 http cache nanoid@https://registry.npmmirror.com/nanoid/-/nanoid-3.3.16.tgz 0ms (cache hit)
+116 http cache esbuild@https://registry.npmmirror.com/esbuild/-/esbuild-0.21.5.tgz 0ms (cache hit)
+117 http cache estree-walker@https://registry.npmmirror.com/estree-walker/-/estree-walker-2.0.2.tgz 0ms (cache hit)
+118 http cache magic-string@https://registry.npmmirror.com/magic-string/-/magic-string-0.30.21.tgz 0ms (cache hit)
+119 http cache csstype@https://registry.npmmirror.com/csstype/-/csstype-3.2.3.tgz 0ms (cache hit)
+120 http cache vue@https://registry.npmmirror.com/vue/-/vue-3.5.40.tgz 0ms (cache hit)
+121 http cache entities@https://registry.npmmirror.com/entities/-/entities-7.0.1.tgz 0ms (cache hit)
+122 http cache @vue/server-renderer@https://registry.npmmirror.com/@vue/server-renderer/-/server-renderer-3.5.40.tgz 0ms (cache hit)
+123 http cache @vue/runtime-dom@https://registry.npmmirror.com/@vue/runtime-dom/-/runtime-dom-3.5.40.tgz 0ms (cache hit)
+124 http cache @vue/runtime-core@https://registry.npmmirror.com/@vue/runtime-core/-/runtime-core-3.5.40.tgz 0ms (cache hit)
+125 http cache @vue/shared@https://registry.npmmirror.com/@vue/shared/-/shared-3.5.40.tgz 0ms (cache hit)
+126 http cache @vue/reactivity@https://registry.npmmirror.com/@vue/reactivity/-/reactivity-3.5.40.tgz 0ms (cache hit)
+127 http cache @vue/devtools-api@https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.6.4.tgz 0ms (cache hit)
+128 http cache @vue/compiler-dom@https://registry.npmmirror.com/@vue/compiler-dom/-/compiler-dom-3.5.40.tgz 0ms (cache hit)
+129 http cache @vue/compiler-ssr@https://registry.npmmirror.com/@vue/compiler-ssr/-/compiler-ssr-3.5.40.tgz 0ms (cache hit)
+130 http cache @vue/compiler-core@https://registry.npmmirror.com/@vue/compiler-core/-/compiler-core-3.5.40.tgz 0ms (cache hit)
+131 http cache @rollup/rollup-win32-x64-gnu@https://registry.npmmirror.com/@rollup/rollup-win32-x64-gnu/-/rollup-win32-x64-gnu-4.62.2.tgz 0ms (cache hit)
+132 http cache @vue/compiler-sfc@https://registry.npmmirror.com/@vue/compiler-sfc/-/compiler-sfc-3.5.40.tgz 0ms (cache hit)
+133 http cache @types/estree@https://registry.npmmirror.com/@types/estree/-/estree-1.0.9.tgz 0ms (cache hit)
+134 http cache @jridgewell/sourcemap-codec@https://registry.npmmirror.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz 0ms (cache hit)
+135 http cache @esbuild/win32-x64@https://registry.npmmirror.com/@esbuild/win32-x64/-/win32-x64-0.21.5.tgz 0ms (cache hit)
+136 http cache @vitejs/plugin-vue@https://registry.npmmirror.com/@vitejs/plugin-vue/-/plugin-vue-5.2.4.tgz 0ms (cache hit)
+137 http cache @babel/parser@https://registry.npmmirror.com/@babel/parser/-/parser-7.29.7.tgz 0ms (cache hit)
+138 http cache @babel/types@https://registry.npmmirror.com/@babel/types/-/types-7.29.7.tgz 0ms (cache hit)
+139 http cache @babel/helper-string-parser@https://registry.npmmirror.com/@babel/helper-string-parser/-/helper-string-parser-7.29.7.tgz 0ms (cache hit)
+140 http cache @rollup/rollup-win32-x64-msvc@https://registry.npmmirror.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.62.2.tgz 0ms (cache hit)
+141 silly tarball no local data for vue-router@https://registry.npmmirror.com/vue-router/-/vue-router-4.6.4.tgz. Extracting by manifest.
+142 silly tarball no local data for vite@https://registry.npmmirror.com/vite/-/vite-5.4.21.tgz. Extracting by manifest.
+143 silly tarball no local data for rollup@https://registry.npmmirror.com/rollup/-/rollup-4.62.2.tgz. Extracting by manifest.
+144 silly tarball no local data for source-map-js@https://registry.npmmirror.com/source-map-js/-/source-map-js-1.2.1.tgz. Extracting by manifest.
+145 silly tarball no local data for postcss@https://registry.npmmirror.com/postcss/-/postcss-8.5.20.tgz. Extracting by manifest.
+146 silly tarball no local data for picocolors@https://registry.npmmirror.com/picocolors/-/picocolors-1.1.1.tgz. Extracting by manifest.
+147 silly tarball no local data for nanoid@https://registry.npmmirror.com/nanoid/-/nanoid-3.3.16.tgz. Extracting by manifest.
+148 silly tarball no local data for esbuild@https://registry.npmmirror.com/esbuild/-/esbuild-0.21.5.tgz. Extracting by manifest.
+149 silly tarball no local data for estree-walker@https://registry.npmmirror.com/estree-walker/-/estree-walker-2.0.2.tgz. Extracting by manifest.
+150 silly tarball no local data for magic-string@https://registry.npmmirror.com/magic-string/-/magic-string-0.30.21.tgz. Extracting by manifest.
+151 silly tarball no local data for csstype@https://registry.npmmirror.com/csstype/-/csstype-3.2.3.tgz. Extracting by manifest.
+152 silly tarball no local data for vue@https://registry.npmmirror.com/vue/-/vue-3.5.40.tgz. Extracting by manifest.
+153 silly tarball no local data for entities@https://registry.npmmirror.com/entities/-/entities-7.0.1.tgz. Extracting by manifest.
+154 silly tarball no local data for @vue/server-renderer@https://registry.npmmirror.com/@vue/server-renderer/-/server-renderer-3.5.40.tgz. Extracting by manifest.
+155 silly tarball no local data for @vue/runtime-dom@https://registry.npmmirror.com/@vue/runtime-dom/-/runtime-dom-3.5.40.tgz. Extracting by manifest.
+156 silly tarball no local data for @vue/runtime-core@https://registry.npmmirror.com/@vue/runtime-core/-/runtime-core-3.5.40.tgz. Extracting by manifest.
+157 silly tarball no local data for @vue/shared@https://registry.npmmirror.com/@vue/shared/-/shared-3.5.40.tgz. Extracting by manifest.
+158 silly tarball no local data for @vue/reactivity@https://registry.npmmirror.com/@vue/reactivity/-/reactivity-3.5.40.tgz. Extracting by manifest.
+159 silly tarball no local data for @vue/devtools-api@https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.6.4.tgz. Extracting by manifest.
+160 silly tarball no local data for @vue/compiler-dom@https://registry.npmmirror.com/@vue/compiler-dom/-/compiler-dom-3.5.40.tgz. Extracting by manifest.
+161 silly tarball no local data for @vue/compiler-ssr@https://registry.npmmirror.com/@vue/compiler-ssr/-/compiler-ssr-3.5.40.tgz. Extracting by manifest.
+162 silly tarball no local data for @vue/compiler-core@https://registry.npmmirror.com/@vue/compiler-core/-/compiler-core-3.5.40.tgz. Extracting by manifest.
+163 silly tarball no local data for @rollup/rollup-win32-x64-gnu@https://registry.npmmirror.com/@rollup/rollup-win32-x64-gnu/-/rollup-win32-x64-gnu-4.62.2.tgz. Extracting by manifest.
+164 silly tarball no local data for @vue/compiler-sfc@https://registry.npmmirror.com/@vue/compiler-sfc/-/compiler-sfc-3.5.40.tgz. Extracting by manifest.
+165 silly tarball no local data for @types/estree@https://registry.npmmirror.com/@types/estree/-/estree-1.0.9.tgz. Extracting by manifest.
+166 silly tarball no local data for @jridgewell/sourcemap-codec@https://registry.npmmirror.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz. Extracting by manifest.
+167 http cache @babel/helper-validator-identifier@https://registry.npmmirror.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.29.7.tgz 0ms (cache hit)
+168 silly tarball no local data for @esbuild/win32-x64@https://registry.npmmirror.com/@esbuild/win32-x64/-/win32-x64-0.21.5.tgz. Extracting by manifest.
+169 silly tarball no local data for @vitejs/plugin-vue@https://registry.npmmirror.com/@vitejs/plugin-vue/-/plugin-vue-5.2.4.tgz. Extracting by manifest.
+170 silly tarball no local data for @babel/parser@https://registry.npmmirror.com/@babel/parser/-/parser-7.29.7.tgz. Extracting by manifest.
+171 silly tarball no local data for @babel/types@https://registry.npmmirror.com/@babel/types/-/types-7.29.7.tgz. Extracting by manifest.
+172 silly tarball no local data for @babel/helper-string-parser@https://registry.npmmirror.com/@babel/helper-string-parser/-/helper-string-parser-7.29.7.tgz. Extracting by manifest.
+173 silly tarball no local data for @rollup/rollup-win32-x64-msvc@https://registry.npmmirror.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.62.2.tgz. Extracting by manifest.
+174 silly tarball no local data for @babel/helper-validator-identifier@https://registry.npmmirror.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.29.7.tgz. Extracting by manifest.
+175 http fetch GET https://registry.npmmirror.com/vue-router/-/vue-router-4.6.4.tgz attempt 1 failed with EACCES
+176 http fetch GET https://registry.npmmirror.com/vite/-/vite-5.4.21.tgz attempt 1 failed with EACCES
+177 http fetch GET https://registry.npmmirror.com/rollup/-/rollup-4.62.2.tgz attempt 1 failed with EACCES
+178 http fetch GET https://registry.npmmirror.com/source-map-js/-/source-map-js-1.2.1.tgz attempt 1 failed with EACCES
+179 http fetch GET https://registry.npmmirror.com/postcss/-/postcss-8.5.20.tgz attempt 1 failed with EACCES
+180 http fetch GET https://registry.npmmirror.com/picocolors/-/picocolors-1.1.1.tgz attempt 1 failed with EACCES
+181 http fetch GET https://registry.npmmirror.com/nanoid/-/nanoid-3.3.16.tgz attempt 1 failed with EACCES
+182 http fetch GET https://registry.npmmirror.com/esbuild/-/esbuild-0.21.5.tgz attempt 1 failed with EACCES
+183 http fetch GET https://registry.npmmirror.com/estree-walker/-/estree-walker-2.0.2.tgz attempt 1 failed with EACCES
+184 http fetch GET https://registry.npmmirror.com/magic-string/-/magic-string-0.30.21.tgz attempt 1 failed with EACCES
+185 http fetch GET https://registry.npmmirror.com/csstype/-/csstype-3.2.3.tgz attempt 1 failed with EACCES
+186 http fetch GET https://registry.npmmirror.com/vue/-/vue-3.5.40.tgz attempt 1 failed with EACCES
+187 http fetch GET https://registry.npmmirror.com/entities/-/entities-7.0.1.tgz attempt 1 failed with EACCES
+188 http fetch GET https://registry.npmmirror.com/@vue/server-renderer/-/server-renderer-3.5.40.tgz attempt 1 failed with EACCES
+189 http fetch GET https://registry.npmmirror.com/@vue/runtime-dom/-/runtime-dom-3.5.40.tgz attempt 1 failed with EACCES
+190 silly audit bulk request failed undefined
+191 verbose audit error FetchError: request to https://registry.npmjs.org/-/npm/v1/security/audits/quick failed, reason: 
+191 verbose audit error     at ClientRequest.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\minipass-fetch\lib\index.js:130:14)
+191 verbose audit error     at ClientRequest.emit (node:events:507:28)
+191 verbose audit error     at emitErrorEvent (node:_http_client:104:11)
+191 verbose audit error     at _destroy (node:_http_client:898:9)
+191 verbose audit error     at onSocketNT (node:_http_client:918:5)
+191 verbose audit error     at process.processTicksAndRejections (node:internal/process/task_queues:91:21) {
+191 verbose audit error   code: 'EACCES',
+191 verbose audit error   errno: 'EACCES',
+191 verbose audit error   type: 'system'
+191 verbose audit error }
+192 silly audit error undefined
+193 silly audit report null
+194 http fetch GET https://registry.npmjs.org/npm attempt 2 failed with EACCES
+195 http fetch GET https://registry.npmmirror.com/vue-router/-/vue-router-4.6.4.tgz attempt 2 failed with EACCES
+196 http fetch GET https://registry.npmmirror.com/vite/-/vite-5.4.21.tgz attempt 2 failed with EACCES
+197 http fetch GET https://registry.npmmirror.com/rollup/-/rollup-4.62.2.tgz attempt 2 failed with EACCES
+198 http fetch GET https://registry.npmmirror.com/source-map-js/-/source-map-js-1.2.1.tgz attempt 2 failed with EACCES
+199 http fetch GET https://registry.npmmirror.com/postcss/-/postcss-8.5.20.tgz attempt 2 failed with EACCES
+200 http fetch GET https://registry.npmmirror.com/picocolors/-/picocolors-1.1.1.tgz attempt 2 failed with EACCES
+201 http fetch GET https://registry.npmmirror.com/nanoid/-/nanoid-3.3.16.tgz attempt 2 failed with EACCES
+202 http fetch GET https://registry.npmmirror.com/esbuild/-/esbuild-0.21.5.tgz attempt 2 failed with EACCES
+203 http fetch GET https://registry.npmmirror.com/estree-walker/-/estree-walker-2.0.2.tgz attempt 2 failed with EACCES
+204 http fetch GET https://registry.npmmirror.com/magic-string/-/magic-string-0.30.21.tgz attempt 2 failed with EACCES
+205 http fetch GET https://registry.npmmirror.com/csstype/-/csstype-3.2.3.tgz attempt 2 failed with EACCES
+206 http fetch GET https://registry.npmmirror.com/vue/-/vue-3.5.40.tgz attempt 2 failed with EACCES
+207 http fetch GET https://registry.npmmirror.com/entities/-/entities-7.0.1.tgz attempt 2 failed with EACCES
+208 http fetch GET https://registry.npmmirror.com/@vue/server-renderer/-/server-renderer-3.5.40.tgz attempt 2 failed with EACCES
+209 http fetch GET https://registry.npmmirror.com/@vue/runtime-dom/-/runtime-dom-3.5.40.tgz attempt 2 failed with EACCES
+210 http fetch GET https://registry.npmjs.org/npm attempt 3 failed with EACCES
+211 http fetch GET https://registry.npmmirror.com/vue-router/-/vue-router-4.6.4.tgz attempt 3 failed with EACCES
+212 http fetch GET https://registry.npmmirror.com/vite/-/vite-5.4.21.tgz attempt 3 failed with EACCES
+213 http fetch GET https://registry.npmmirror.com/rollup/-/rollup-4.62.2.tgz attempt 3 failed with EACCES
+214 http fetch GET https://registry.npmmirror.com/source-map-js/-/source-map-js-1.2.1.tgz attempt 3 failed with EACCES
+215 http fetch GET https://registry.npmmirror.com/postcss/-/postcss-8.5.20.tgz attempt 3 failed with EACCES
+216 http fetch GET https://registry.npmmirror.com/picocolors/-/picocolors-1.1.1.tgz attempt 3 failed with EACCES
+217 http fetch GET https://registry.npmmirror.com/nanoid/-/nanoid-3.3.16.tgz attempt 3 failed with EACCES
+218 http fetch GET https://registry.npmmirror.com/esbuild/-/esbuild-0.21.5.tgz attempt 3 failed with EACCES
+219 http fetch GET https://registry.npmmirror.com/estree-walker/-/estree-walker-2.0.2.tgz attempt 3 failed with EACCES
+220 http fetch GET https://registry.npmmirror.com/magic-string/-/magic-string-0.30.21.tgz attempt 3 failed with EACCES
+221 http fetch GET https://registry.npmmirror.com/csstype/-/csstype-3.2.3.tgz attempt 3 failed with EACCES
+222 http fetch GET https://registry.npmmirror.com/vue/-/vue-3.5.40.tgz attempt 3 failed with EACCES
+223 http fetch GET https://registry.npmmirror.com/entities/-/entities-7.0.1.tgz attempt 3 failed with EACCES
+224 http fetch GET https://registry.npmmirror.com/@vue/server-renderer/-/server-renderer-3.5.40.tgz attempt 3 failed with EACCES
+225 http fetch GET https://registry.npmmirror.com/@vue/runtime-dom/-/runtime-dom-3.5.40.tgz attempt 3 failed with EACCES
+226 verbose cwd D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码
+227 verbose os Windows_NT 10.0.26200
+228 verbose node v23.11.0
+229 verbose npm  v10.9.2
+230 error Exit handler never called!
+231 error This is an error with npm itself. Please report this error at:
+232 error   <https://github.com/npm/cli/issues>
+233 verbose exit 1
+234 verbose code 1
+235 error A complete log of this run can be found in: D:\计算机运行笔记\AI-Medical-Agent-Brain\09_Frontend\09_Doctor_Dashboard-源码\.npm-cache\_logs\2026-07-20T04_07_00_885Z-debug-0.log
