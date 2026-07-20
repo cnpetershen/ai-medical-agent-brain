@@ -35,8 +35,13 @@ class Orchestrator:
         workflow_definition: dict[str, Any],
         patient_context: dict[str, Any],
         human_decision: str = "approve",
+        workflow_input: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
-        context = self.state_manager.initialize_context(workflow_definition, patient_context)
+        context = self.state_manager.initialize_context(
+            workflow_definition,
+            patient_context,
+            workflow_input=workflow_input,
+        )
         context["workflow_status"] = "running"
         context["human_decision_override"] = human_decision
 
@@ -49,7 +54,14 @@ class Orchestrator:
             handler = self.handlers[node_type]
 
             try:
+                self.state_manager.log_event(
+                    context,
+                    f"Node input: {self._node_input(node_name, context)}",
+                )
                 output = handler.run(node, context)
+                self.state_manager.log_event(
+                    context, f"Node output: {node_name} -> {output}"
+                )
                 if node_type == "LLM":
                     self.state_manager.log_event(
                         context, f"LLM output for {node_name}: {output}"
@@ -64,9 +76,9 @@ class Orchestrator:
                         self.state_manager.finalize(context, "rejected")
                         return context
 
-                if node_type == "MEMORY" and node_name == "write_confirmed_pre_visit_context":
-                    before = output["before"]["pre_visit_memory"]
-                    after = output["after"]["pre_visit_memory"]
+                if node_type == "MEMORY" and node_name.startswith("write_confirmed_"):
+                    before = output["before"]
+                    after = output["after"]
                     self.state_manager.log_event(
                         context,
                         "Memory change: "
@@ -90,3 +102,15 @@ class Orchestrator:
         self.state_manager.finalize(context, "completed")
         return context
 
+    @staticmethod
+    def _node_input(node_name: str, context: dict[str, Any]) -> dict[str, Any]:
+        if node_name.startswith("load_"):
+            return {
+                "patient_id": context["patient_id"],
+                "workflow_input_keys": sorted(context["workflow_input"].keys()),
+            }
+        return {
+            "patient_id": context["patient_id"],
+            "available_node_outputs": sorted(context["node_outputs"].keys()),
+            "workflow_input_keys": sorted(context["workflow_input"].keys()),
+        }

@@ -18,6 +18,7 @@ class StateManager:
         self,
         workflow_definition: dict[str, Any],
         patient_context: dict[str, Any],
+        workflow_input: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         workflow_name = workflow_definition["workflow_name"]
         patient_id = patient_context["patient_id"]
@@ -29,6 +30,7 @@ class StateManager:
             "current_node": None,
             "patient_id": patient_id,
             "patient_context": patient_context,
+            "workflow_input": workflow_input or {},
             "memory_context": None,
             "node_outputs": {},
             "execution_log": [],
@@ -73,11 +75,18 @@ class StateManager:
         context["updated_at"] = self._now()
         self.log_event(context, f"Workflow finished with status: {status}")
         self.save_context(context)
+        self.save_text_log(context)
 
     def save_context(self, context: dict[str, Any]) -> None:
         path = self.state_dir / f"{context['workflow_id']}.json"
         with path.open("w", encoding="utf-8") as handle:
             json.dump(context, handle, ensure_ascii=False, indent=2)
+
+    def save_text_log(self, context: dict[str, Any]) -> None:
+        path = self.state_dir / f"{context['workflow_id']}.log"
+        with path.open("w", encoding="utf-8") as handle:
+            for entry in context["execution_log"]:
+                handle.write(f"[{entry['timestamp']}] {entry['message']}\n")
 
     @staticmethod
     def _now() -> str:
@@ -86,4 +95,3 @@ class StateManager:
     @staticmethod
     def _timestamp_for_id() -> str:
         return datetime.now().strftime("%Y%m%d%H%M%S")
-

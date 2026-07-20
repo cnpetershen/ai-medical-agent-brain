@@ -1,0 +1,13 @@
+{
+  "workflow_id": "post_visit-SIM-HTN-001-20260720093117",
+  "workflow_name": "post_visit",
+  "node_name": "doctor_review_post_visit_status",
+  "decision": "approve",
+  "doctor_id": "DOCTOR-DEMO-001",
+  "modified_content": null,
+  "review_comment": null,
+  "doctor_confirmation_id": "HITL-POST-001",
+  "memory_write_allowed": true,
+  "next_action": "continue_workflow",
+  "safety_note": "医生确认仅打开可信写回门禁，不自动诊断、不自动处方、不自动改药。"
+}

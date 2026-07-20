@@ -51,10 +51,17 @@ def update_patient_memory(
     memory = get_patient_memory(data_dir, patient_id)
     before = copy.deepcopy(memory)
 
-    pre_visit_patch = confirmed_memory_patch.get("pre_visit_memory", {})
-    if pre_visit_patch:
-        memory["pre_visit_memory"].update(pre_visit_patch)
-        memory["pre_visit_memory"]["doctor_confirmed"] = True
+    for section_name, section_patch in confirmed_memory_patch.items():
+        if not isinstance(section_patch, dict):
+            continue
+        current_section = memory.setdefault(section_name, {})
+        current_section.update(section_patch)
+        if section_name in {
+            "pre_visit_memory",
+            "in_visit_memory",
+            "post_visit_memory",
+        }:
+            current_section["doctor_confirmed"] = True
 
     memory["last_confirmation_id"] = doctor_confirmation_id
 
@@ -68,3 +75,46 @@ def update_patient_memory(
         "after": memory,
     }
 
+
+def _load_jsonl(path: Path) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            if line.strip():
+                rows.append(json.loads(line))
+    return rows
+
+
+def get_followup_status(data_dir: Path, patient_id: str) -> list[dict[str, Any]]:
+    events = _load_jsonl(data_dir / "followup_events.jsonl")
+    return [event for event in events if event["patient_id"] == patient_id]
+
+
+def record_patient_feedback(
+    data_dir: Path,
+    task_id: str,
+    feedback: dict[str, Any],
+) -> dict[str, Any]:
+    return {
+        "recorded": True,
+        "task_id": task_id,
+        "feedback": feedback,
+        "source": "synthetic_demo_feedback",
+    }
+
+
+def create_followup_tasks(
+    data_dir: Path,
+    patient_id: str,
+    confirmed_order: str,
+) -> list[dict[str, Any]]:
+    tasks = _load_jsonl(data_dir / "followup_tasks.jsonl")
+    return [
+        {
+            **task,
+            "patient_id": patient_id,
+            "source_confirmed_order": confirmed_order,
+        }
+        for task in tasks
+        if task["patient_id"] == patient_id
+    ]

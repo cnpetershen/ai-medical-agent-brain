@@ -46,38 +46,81 @@ def load_patient_context(base_dir: Path) -> dict:
         return json.load(handle)
 
 
+def load_jsonl(path: Path) -> list[dict]:
+    rows = []
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            if line.strip():
+                rows.append(json.loads(line))
+    return rows
+
+
 def main() -> None:
     base_dir = Path(__file__).resolve().parent
     repo_root = base_dir.parent.parent
     workflow_loader = WorkflowLoader(
         repo_root / "04_Output" / "Demo实施包" / "workflows"
     )
-    workflow_definition = workflow_loader.load("pre_visit")
+    workflow_definitions = workflow_loader.load_all()
     patient_context = load_patient_context(base_dir)
     orchestrator = build_runtime(base_dir)
-    result = orchestrator.run(workflow_definition, patient_context, human_decision="approve")
+    data_dir = repo_root / "04_Output" / "Demo实施包" / "data"
+    decisions = {
+        "pre_visit": "approve",
+        "during_visit": "approve",
+        "post_visit": "approve",
+    }
+    results = {}
 
-    print("=" * 80)
-    print("Workflow Execution Log")
-    print("=" * 80)
-    for entry in result["execution_log"]:
-        print(f"[{entry['timestamp']}] {entry['message']}")
-
-    print("\n" + "=" * 80)
-    print("Workflow Final Status")
-    print("=" * 80)
-    print(
-        json.dumps(
-            {
-                "workflow_id": result["workflow_id"],
-                "workflow_name": result["workflow_name"],
-                "workflow_status": result["workflow_status"],
-                "current_node": result["current_node"],
-            },
-            ensure_ascii=False,
-            indent=2,
-        )
+    results["pre_visit"] = orchestrator.run(
+        workflow_definitions["pre_visit"],
+        patient_context,
+        human_decision=decisions,
+        workflow_input={"source": "patient_wang_001.json"},
     )
+    results["during_visit"] = orchestrator.run(
+        workflow_definitions["during_visit"],
+        patient_context,
+        human_decision=decisions,
+        workflow_input={
+            "pre_visit_context": results["pre_visit"],
+            "confirmed_pre_visit_summary": results["pre_visit"]["node_outputs"].get(
+                "generate_structured_pre_visit_summary", {}
+            ),
+        },
+    )
+    results["post_visit"] = orchestrator.run(
+        workflow_definitions["post_visit"],
+        patient_context,
+        human_decision=decisions,
+        workflow_input={
+            "during_visit_context": results["during_visit"],
+            "followup_events": load_jsonl(data_dir / "followup_events.jsonl"),
+        },
+    )
+
+    for name, result in results.items():
+        print("=" * 80)
+        print(f"{name} Workflow Execution Log")
+        print("=" * 80)
+        for entry in result["execution_log"]:
+            print(f"[{entry['timestamp']}] {entry['message']}")
+
+        print("\n" + "=" * 80)
+        print(f"{name} Final Status")
+        print("=" * 80)
+        print(
+            json.dumps(
+                {
+                    "workflow_id": result["workflow_id"],
+                    "workflow_name": result["workflow_name"],
+                    "workflow_status": result["workflow_status"],
+                    "current_node": result["current_node"],
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
 
 
 if __name__ == "__main__":

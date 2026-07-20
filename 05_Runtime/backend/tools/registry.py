@@ -10,6 +10,9 @@ from tools.patient_tools import (
     get_patient_profile,
     get_recent_vitals,
     get_risk_profile,
+    record_patient_feedback,
+    create_followup_tasks,
+    get_followup_status,
     update_patient_memory,
 )
 
@@ -28,6 +31,9 @@ class ToolRegistry:
             "get_risk_profile": get_risk_profile,
             "get_recent_vitals": get_recent_vitals,
             "update_patient_memory": update_patient_memory,
+            "record_patient_feedback": record_patient_feedback,
+            "create_followup_tasks": create_followup_tasks,
+            "get_followup_status": get_followup_status,
         }
 
     def get_tools_for_node(self, workflow_name: str, node_name: str) -> list[str]:
@@ -47,4 +53,3 @@ class ToolRegistry:
     def _load_contracts(self) -> dict[str, Any]:
         with self.contracts_path.open("r", encoding="utf-8") as handle:
             return yaml.safe_load(handle)
-
