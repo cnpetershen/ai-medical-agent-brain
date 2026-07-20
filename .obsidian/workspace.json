@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "0d390cbc4ae52938",
+        "id": "775d0b3813541980",
         "type": "tabs",
         "children": [
           {
-            "id": "c68965d5a1963d22",
+            "id": "597cb02c9ea53f72",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "04_Output/Demo实施包/workflows/Workflow Mapping.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "Workflow Mapping"
             }
           }
         ]
@@ -222,44 +226,44 @@
       "juggl:Juggl global graph": false
     }
   },
-  "active": "c68965d5a1963d22",
+  "active": "597cb02c9ea53f72",
   "lastOpenFiles": [
+    "05_Runtime/backend/runtime_state/pre_visit-SIM-HTN-001-20260719235720.json",
+    "05_Runtime/backend/runtime_state",
+    "05_Runtime/backend/workflow_engine/__pycache__/__init__.cpython-311.pyc",
+    "05_Runtime/backend/workflow_engine/__pycache__/workflow_loader.cpython-311.pyc",
+    "05_Runtime/backend/workflow_engine/__pycache__/state_manager.cpython-311.pyc",
+    "05_Runtime/backend/workflow_engine/__pycache__/orchestrator.cpython-311.pyc",
+    "05_Runtime/backend/workflow_engine/__pycache__",
+    "05_Runtime/backend/nodes/__pycache__/tool_node.cpython-311.pyc",
+    "05_Runtime/backend/nodes/__pycache__/rag_node.cpython-311.pyc",
+    "05_Runtime/backend/tools/__pycache__/patient_tools.cpython-311.pyc",
+    "05_Runtime/backend/tools/__pycache__/__init__.cpython-311.pyc",
+    "04_Output/Demo实施包/runtime/Runtime Data Flow.md",
+    "04_Output/Demo实施包/runtime/Runtime Component Map.md",
+    "04_Output/Demo实施包/runtime/Runtime Architecture Spec.md",
+    "04_Output/Demo实施包/tools/Tool Contract Spec.md",
+    "04_Output/Demo实施包/orchestration/Agent Orchestration Spec.md",
+    "04_Output/Demo实施包/Agent架构强化说明.md",
+    "04_Output/Demo实施包/落地评估与实施计划.md",
+    "04_Output/Demo实施包/workflows/Workflow Mapping.md",
     "99_System/Templates/项目模板.md",
     "99_System/Templates/技术方案模板.md",
     "02_Wiki/风险画像.md",
-    "04_Output/Demo实施包/落地评估与实施计划.md",
-    "04_Output/Demo实施包/data/risk_profile_wang_001.json",
-    "04_Output/Demo实施包/data/patient_memory_wang_001.json",
-    "04_Output/Demo实施包/Agent架构强化说明.md",
     "04_Output/Demo实施包/README.md",
     "04_Output/Demo实施包/验收清单.md",
     "04_Output/Demo实施包/演示脚本.md",
     "04_Output/Demo实施包/dify/prompts.md",
     "04_Output/Demo实施包/dify/build_steps.md",
     "04_Output/开题报告/开题报告.md",
-    "04_Output/Demo实施包/dify/tool_schemas.json",
     "04_Output/Demo实施包/data/knowledge_hypertension_demo.md",
-    "04_Output/Demo实施包/data/followup_events.jsonl",
-    "04_Output/Demo实施包/data/followup_tasks.jsonl",
-    "04_Output/Demo实施包/data/patient_wang_001.json",
-    "04_Output/Demo实施包/dify",
-    "04_Output/Demo实施包/data",
-    "04_Output/Demo实施包",
     "99_System/CODEX_RULES.md",
     "00_Inbox/02_项目需求输入/项目需求输入模板.md",
     "01_Raw/参考资料/开题报告/开题报告参考资料清单-外部检索核验.md",
     "00_Inbox/03_外部资料待分流/外部资料接收清单.md",
     "01_Raw/参考资料/开题报告/README.md",
-    "01_Raw/参考资料/开题报告",
     "00_Inbox/02_项目需求输入/AI先锋大赛-医生AI Copilot Agentic Workflow-需求输入表.md",
     "00_Inbox/00_Inbox使用说明.md",
-    "00_Inbox/04_问题与假设/项目问题与假设清单.md",
-    "00_Inbox/03_K3资料待分流/K3资料接收清单.md",
-    "03_Project/医生AI Copilot知识地图.md",
-    "02_Wiki/医疗AI Agent.md",
-    "02_Wiki/医疗隐私与最小必要原则.md",
-    "02_Wiki/医疗Copilot Agent.md",
-    "README.md",
     "mermaid-diagram (1).png",
     "04_Output/开题报告/mermaid-diagram.png",
     "未命名.canvas"

@@ -1,0 +1,426 @@
+version: demo-v1
+source:
+  tool_schema: ../dify/tool_schemas.json
+  workflows:
+    - ../workflows/pre_visit.yaml
+    - ../workflows/during_visit.yaml
+    - ../workflows/post_visit.yaml
+global_audit_requirement:
+  required_fields:
+    - tool_name
+    - input
+    - output
+    - called_at
+    - workflow_stage
+    - workflow_node
+  conditional_fields:
+    - patient_id
+    - task_id
+    - doctor_confirmation_id
+global_medical_safety_constraints:
+  - AI只做辅助信息整理、检索、草稿生成、任务拆解和反馈摘要。
+  - 禁止自动诊断。
+  - 禁止自动处方。
+  - 禁止自动改药。
+  - 禁止自动修改治疗方案。
+  - 写入可信Memory或进入诊后任务的内容必须来自医生确认结果。
+tools:
+  - tool_name: get_patient_profile
+    purpose: 查询模拟患者档案、病史、当前用药和上次就诊摘要。
+    workflow_usage:
+      - pre_visit
+      - during_visit
+    used_by_nodes:
+      - load_pre_visit_context
+      - load_during_visit_context
+    input_schema:
+      type: object
+      required:
+        - patient_id
+      properties:
+        patient_id:
+          type: string
+          example: SIM-HTN-001
+    output_schema:
+      type: object
+      output_ref: ../data/patient_wang_001.json
+      contains:
+        - patient_id
+        - profile
+        - history
+        - current_medications
+        - recent_vitals
+        - previous_visit_summary
+    permission: read_only
+    human_confirmation_required: false
+    audit_requirement:
+      log_input: true
+      log_output: true
+      log_called_at: true
+      log_workflow_stage: true
+      log_workflow_node: true
+    failure_handling:
+      error_code: data_not_found
+      action: 停止依赖患者档案的摘要生成，并提示数据缺失。
+
+  - tool_name: get_patient_memory
+    purpose: 读取医生确认后的Patient Memory，用于维持跨诊前、诊中、诊后的连续上下文。
+    workflow_usage:
+      - pre_visit
+      - during_visit
+      - post_visit
+    used_by_nodes:
+      - load_continuity_memory
+      - load_confirmed_patient_memory
+      - load_confirmed_post_visit_memory
+    input_schema:
+      type: object
+      required:
+        - patient_id
+      properties:
+        patient_id:
+          type: string
+          example: SIM-HTN-001
+    output_schema:
+      type: object
+      output_ref: ../data/patient_memory_wang_001.json
+      contains:
+        - baseline_memory
+        - pre_visit_memory
+        - in_visit_memory
+        - post_visit_memory
+        - memory_update_rules
+    permission: read_only
+    human_confirmation_required: false
+    audit_requirement:
+      log_input: true
+      log_output: true
+      log_called_at: true
+      log_workflow_stage: true
+      log_workflow_node: true
+    failure_handling:
+      error_code: memory_read_failed
+      action: 允许继续生成辅助草稿，但必须提示连续上下文不完整。
+
+  - tool_name: update_patient_memory
+    purpose: 在医生确认后写回Patient Memory；未经医生确认的AI草稿不得调用。
+    workflow_usage:
+      - pre_visit
+      - during_visit
+      - post_visit
+    used_by_nodes:
+      - write_confirmed_pre_visit_context
+      - write_confirmed_during_visit_decisions
+      - write_confirmed_post_visit_feedback
+    input_schema:
+      type: object
+      required:
+        - patient_id
+        - confirmed_memory_patch
+        - doctor_confirmation_id
+      properties:
+        patient_id:
+          type: string
+          example: SIM-HTN-001
+        confirmed_memory_patch:
+          type: object
+          description: 医生确认后允许写回的记忆增量。
+        doctor_confirmation_id:
+          type: string
+          example: HITL-POST-001
+    output_schema:
+      type: object
+      properties:
+        updated:
+          type: boolean
+        requires_doctor_confirmation:
+          type: boolean
+    permission: write_confirmed_memory_only
+    human_confirmation_required: true
+    audit_requirement:
+      log_input: true
+      log_output: true
+      log_called_at: true
+      log_workflow_stage: true
+      log_workflow_node: true
+      log_doctor_confirmation_id: true
+      log_memory_patch: true
+    failure_handling:
+      error_code: confirmation_required_or_memory_write_failed
+      action: 缺少医生确认ID时禁止写入；写入失败时不得假定Memory已更新。
+
+  - tool_name: get_risk_profile
+    purpose: 读取Demo风险画像，用于提示医生关注优先级；不代表真实临床风险分层。
+    workflow_usage:
+      - pre_visit
+      - during_visit
+      - post_visit
+    used_by_nodes:
+      - load_pre_visit_context
+      - load_during_visit_context
+      - load_post_visit_inputs
+    input_schema:
+      type: object
+      required:
+        - patient_id
+      properties:
+        patient_id:
+          type: string
+          example: SIM-HTN-001
+    output_schema:
+      type: object
+      output_ref: ../data/risk_profile_wang_001.json
+      contains:
+        - overall_demo_risk_level
+        - risk_dimensions
+        - guardrail
+    permission: read_only
+    human_confirmation_required: false
+    audit_requirement:
+      log_input: true
+      log_output: true
+      log_called_at: true
+      log_workflow_stage: true
+      log_workflow_node: true
+    failure_handling:
+      error_code: data_not_found
+      action: Workflow可继续，但必须提示风险画像缺失，不得编造风险分层。
+
+  - tool_name: get_recent_vitals
+    purpose: 查询模拟患者近期家庭血压记录。
+    workflow_usage:
+      - pre_visit
+      - during_visit
+      - post_visit
+    used_by_nodes:
+      - load_pre_visit_context
+      - load_during_visit_context
+      - load_post_visit_inputs
+    input_schema:
+      type: object
+      required:
+        - patient_id
+        - days
+      properties:
+        patient_id:
+          type: string
+          example: SIM-HTN-001
+        days:
+          type: integer
+          example: 14
+    output_schema:
+      type: array
+      output_path: $.recent_vitals
+      items:
+        type: object
+        contains:
+          - date
+          - time
+          - sbp
+          - dbp
+          - heart_rate
+          - source
+    permission: read_only
+    human_confirmation_required: false
+    audit_requirement:
+      log_input: true
+      log_output: true
+      log_called_at: true
+      log_workflow_stage: true
+      log_workflow_node: true
+    failure_handling:
+      error_code: data_missing
+      action: 只能生成补充问题，不得推断不存在的数据。
+
+  - tool_name: search_medical_knowledge
+    purpose: 检索高血压指南和药品说明书Demo知识片段，返回带来源的内容。
+    workflow_usage:
+      - during_visit
+    used_by_nodes:
+      - retrieve_medical_knowledge
+    input_schema:
+      type: object
+      required:
+        - query
+      properties:
+        query:
+          type: string
+          example: 高血压复诊 家庭血压 连续偏高 用药原则
+    output_schema:
+      type: array
+      knowledge_file: ../data/knowledge_hypertension_demo.md
+      items:
+        type: object
+        contains:
+          - title
+          - source
+          - content
+          - retrieval_status
+    permission: read_only_rag
+    human_confirmation_required: false
+    audit_requirement:
+      log_input: true
+      log_output: true
+      log_called_at: true
+      log_workflow_stage: true
+      log_workflow_node: true
+      log_knowledge_source: true
+    failure_handling:
+      error_code: rag_failed_or_no_retrieval_result
+      action: 不得编造来源；输出必须提示未检索到充分来源。
+
+  - tool_name: create_followup_tasks
+    purpose: 根据医生确认后的医嘱生成随访任务；只生成任务，不执行医疗行为。
+    workflow_usage:
+      - post_visit
+    used_by_nodes:
+      - create_and_track_followup_tasks
+    input_schema:
+      type: object
+      required:
+        - patient_id
+        - confirmed_order
+      properties:
+        patient_id:
+          type: string
+          example: SIM-HTN-001
+        confirmed_order:
+          type: string
+          description: 医生确认后的医嘱或管理计划文本。
+    output_schema:
+      type: array
+      output_ref: ../data/followup_tasks.jsonl
+      items:
+        type: object
+        contains:
+          - task_id
+          - patient_id
+          - type
+          - title
+          - schedule
+          - status
+          - source
+          - requires_doctor_confirmation
+    permission: create_task_from_confirmed_order_only
+    human_confirmation_required: true
+    audit_requirement:
+      log_input: true
+      log_output: true
+      log_called_at: true
+      log_workflow_stage: true
+      log_workflow_node: true
+      log_confirmed_order_source: true
+    failure_handling:
+      error_code: confirmation_required_or_tool_failed
+      action: 未确认医嘱不得生成任务；任务生成失败时不得假定任务已创建。
+
+  - tool_name: record_patient_feedback
+    purpose: 记录患者对随访任务的执行反馈。
+    workflow_usage:
+      - post_visit
+    used_by_nodes:
+      - create_and_track_followup_tasks
+    input_schema:
+      type: object
+      required:
+        - task_id
+        - feedback
+      properties:
+        task_id:
+          type: string
+          example: TASK-002
+        feedback:
+          type: object
+    output_schema:
+      type: object
+      properties:
+        recorded:
+          type: boolean
+    permission: record_patient_reported_feedback
+    human_confirmation_required: false
+    audit_requirement:
+      log_input: true
+      log_output: true
+      log_called_at: true
+      log_workflow_stage: true
+      log_workflow_node: true
+      log_feedback_source: true
+    failure_handling:
+      error_code: tool_failed
+      action: 不得假定反馈已保存；诊后摘要必须提示反馈记录不完整。
+
+  - tool_name: get_followup_status
+    purpose: 汇总7天随访执行状态、异常标记和可回流到下一次诊前的摘要。
+    workflow_usage:
+      - post_visit
+    used_by_nodes:
+      - load_post_visit_inputs
+      - create_and_track_followup_tasks
+    input_schema:
+      type: object
+      required:
+        - patient_id
+      properties:
+        patient_id:
+          type: string
+          example: SIM-HTN-001
+    output_schema:
+      type: array
+      output_ref: ../data/followup_events.jsonl
+      items:
+        type: object
+        contains:
+          - event_id
+          - patient_id
+          - task_id
+          - day
+          - date
+          - type
+          - payload
+          - agent_flag
+          - doctor_review_required
+    permission: read_followup_status
+    human_confirmation_required: false
+    audit_requirement:
+      log_input: true
+      log_output: true
+      log_called_at: true
+      log_workflow_stage: true
+      log_workflow_node: true
+    failure_handling:
+      error_code: tool_failed
+      action: 不得生成完整执行结论，只能提示随访数据缺失。
+workflow_tool_mapping:
+  pre_visit:
+    load_pre_visit_context:
+      - get_patient_profile
+      - get_risk_profile
+      - get_recent_vitals
+    load_continuity_memory:
+      - get_patient_memory
+    write_confirmed_pre_visit_context:
+      - update_patient_memory
+  during_visit:
+    load_during_visit_context:
+      - get_patient_profile
+      - get_risk_profile
+      - get_recent_vitals
+    load_confirmed_patient_memory:
+      - get_patient_memory
+    retrieve_medical_knowledge:
+      - search_medical_knowledge
+    write_confirmed_during_visit_decisions:
+      - update_patient_memory
+  post_visit:
+    load_post_visit_inputs:
+      - get_risk_profile
+      - get_recent_vitals
+      - get_followup_status
+    load_confirmed_post_visit_memory:
+      - get_patient_memory
+    create_and_track_followup_tasks:
+      - create_followup_tasks
+      - record_patient_feedback
+      - get_followup_status
+    write_confirmed_post_visit_feedback:
+      - update_patient_memory

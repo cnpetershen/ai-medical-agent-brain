@@ -11,11 +11,11 @@
     "allergy": "未诉明确药物过敏史"
   },
   "pre_visit_memory": {
-    "chief_complaint": "近两周家庭血压偏高，伴间断头晕。",
-    "bp_pattern": "多次晨起家庭血压约 150-165/92-100 mmHg。",
-    "adherence_signal": "近两周自述漏服 2 次。",
+    "chief_complaint": "近两周自测血压偏高，伴间断头晕，前来复诊。",
+    "bp_pattern": "2026-07-13 164/100, 2026-07-15 156/95, 2026-07-18 162/97",
+    "adherence_signal": "近两周漏服 2 次",
     "lifestyle_signal": "近期工作压力大、睡眠不足、饮食偏咸。",
-    "doctor_confirmed": false
+    "doctor_confirmed": true
   },
   "in_visit_memory": {
     "confirmed_management_plan": null,
@@ -33,5 +33,6 @@
     "诊前摘要、诊中医嘱、诊后异常摘要必须经过医生确认后才写入对应记忆区。",
     "患者反馈可先进入待确认事件区，异常事件经医生查看后再进入回流记忆。",
     "Memory 只用于连续照护上下文，不用于自动诊断或自动处方。"
-  ]
+  ],
+  "last_confirmation_id": "HITL-PRE-001"
 }

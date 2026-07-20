@@ -1,0 +1,47 @@
+workflow_name: pre_visit
+business_goal: >
+  在医生接诊前整合患者基础信息、主诉、历史资料与近期健康反馈，
+  生成医生可审核的诊前上下文，帮助医生更快进入临床判断，同时保持医生主导。
+input_data:
+  - patient_profile
+  - chief_complaint
+  - symptom_description
+  - past_medical_history
+  - allergy_history
+  - medication_history
+  - historical_visit_summary
+  - recent_health_data
+  - patient_questionnaire_or_notes
+  - prior_post_visit_feedback
+nodes:
+  - node_name: load_pre_visit_context
+    node_type: TOOL
+    purpose: 读取患者基础信息、既往资料、近期健康数据和上一次诊后反馈。
+  - node_name: load_continuity_memory
+    node_type: MEMORY
+    purpose: 读取可用于本次诊前整理的连续照护上下文。
+  - node_name: identify_key_and_missing_information
+    node_type: LLM
+    purpose: 识别本次就诊相关的关键信息、风险线索和缺失信息。
+  - node_name: generate_structured_pre_visit_summary
+    node_type: LLM
+    purpose: 将患者自由描述与历史资料整理为结构化诊前摘要，不输出诊断或治疗方案。
+  - node_name: doctor_review_pre_visit_summary
+    node_type: HUMAN
+    purpose: 医生审核诊前摘要、关键问题和补充问题，决定采纳、修改或拒绝。
+  - node_name: write_confirmed_pre_visit_context
+    node_type: MEMORY
+    purpose: 仅将医生确认后的诊前关键上下文写入可信记忆，供诊中 Workflow 使用。
+output_data:
+  - structured_pre_visit_summary
+  - key_visit_questions
+  - missing_information_questions
+  - recent_health_overview
+  - confirmed_patient_context_for_during_visit
+hitl_confirmation_points:
+  - doctor_review_pre_visit_summary
+guardrails:
+  - 保持医生主导，诊前输出仅为辅助整理材料。
+  - 禁止自动诊断。
+  - 禁止自动生成处方或治疗决定。
+  - 未经医生确认的内容不得写入可信 Memory。

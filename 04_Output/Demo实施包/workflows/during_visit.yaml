@@ -1,0 +1,53 @@
+workflow_name: during_visit
+business_goal: >
+  在医生接诊过程中整合诊前上下文、病历资料、检查结果和相关知识，
+  生成医生可审核的辅助摘要、管理要点和医嘱草稿，支持临床判断但不替代医生决策。
+input_data:
+  - confirmed_pre_visit_summary
+  - visit_complaint_and_followup_details
+  - historical_emr_records
+  - lab_results
+  - imaging_results
+  - examination_reports
+  - doctor_question_or_instruction
+  - medical_knowledge_sources
+  - continuity_memory
+nodes:
+  - node_name: load_during_visit_context
+    node_type: TOOL
+    purpose: 读取诊前确认结果、历史病历、检查结果和本次诊疗相关输入。
+  - node_name: load_confirmed_patient_memory
+    node_type: MEMORY
+    purpose: 读取医生已确认的跨阶段患者上下文，作为诊中辅助基础。
+  - node_name: determine_information_need
+    node_type: LLM
+    purpose: 根据医生问题或当前诊疗阶段识别需要整理和检索的信息范围。
+  - node_name: retrieve_medical_knowledge
+    node_type: RAG
+    purpose: 在需要时检索指南、知识资料或参考片段，为医生提供可追溯依据。
+  - node_name: organize_clinical_context
+    node_type: LLM
+    purpose: 汇总病历、检查结果、患者近期状态和知识依据，形成辅助性摘要与提示。
+  - node_name: generate_order_draft
+    node_type: LLM
+    purpose: 生成为医生审核准备的医嘱或诊后管理任务草稿，不形成最终诊疗决定。
+  - node_name: doctor_review_during_visit_output
+    node_type: HUMAN
+    purpose: 医生审核知识辅助结果、摘要和医嘱草稿，决定采纳、修改或拒绝。
+  - node_name: write_confirmed_during_visit_decisions
+    node_type: MEMORY
+    purpose: 将医生确认后的管理计划、关键判断点和后续任务写入可信记忆。
+output_data:
+  - during_visit_information_summary
+  - organized_exam_results
+  - knowledge_assistance_with_sources
+  - clinical_note_or_progress_note_draft
+  - order_or_management_task_draft
+  - confirmed_items_for_post_visit_workflow
+hitl_confirmation_points:
+  - doctor_review_during_visit_output
+guardrails:
+  - 保持医生主导，诊中输出仅为辅助决策材料。
+  - 禁止自动诊断。
+  - 禁止自动处方。
+  - 禁止在未经医生确认时将医嘱传递到诊后 Workflow。

@@ -1,0 +1,53 @@
+workflow_name: post_visit
+business_goal: >
+  将医生确认后的医嘱与管理要求转化为可执行、可跟踪、可反馈的诊后任务，
+  记录患者执行状态并生成回流摘要，为下一次诊前提供连续照护上下文。
+input_data:
+  - confirmed_doctor_orders
+  - medication_plan
+  - rehabilitation_tasks
+  - followup_requirements
+  - review_schedule
+  - patient_execution_feedback
+  - patient_health_data
+  - followup_records
+  - abnormal_event_reports
+  - during_visit_management_summary
+  - continuity_memory
+nodes:
+  - node_name: load_post_visit_inputs
+    node_type: TOOL
+    purpose: 读取医生确认后的医嘱、诊疗重点、任务要求和患者后续反馈输入。
+  - node_name: load_confirmed_post_visit_memory
+    node_type: MEMORY
+    purpose: 读取与本次诊后执行相关的已确认患者上下文。
+  - node_name: decompose_orders_into_tasks
+    node_type: LLM
+    purpose: 将医生确认的医嘱拆解为用药、康复、复查、复诊和随访等具体任务。
+  - node_name: create_and_track_followup_tasks
+    node_type: TOOL
+    purpose: 生成患者侧任务计划并持续记录任务状态和健康反馈。
+  - node_name: summarize_execution_and_flag_risks
+    node_type: LLM
+    purpose: 汇总执行情况并标记未完成、异常反馈或需要医生关注的风险信号。
+  - node_name: doctor_review_post_visit_status
+    node_type: HUMAN
+    purpose: 医生审核异常情况、风险提示和后续处理建议，决定是否需要复诊或追加随访。
+  - node_name: write_confirmed_post_visit_feedback
+    node_type: MEMORY
+    purpose: 将医生确认后的诊后反馈摘要写入可信记忆，供下一次诊前读取。
+output_data:
+  - patient_followup_tasks
+  - patient_reminders_and_plan
+  - task_status_records
+  - abnormal_or_risk_flags
+  - confirmed_post_visit_feedback_summary
+  - next_pre_visit_context
+hitl_confirmation_points:
+  - doctor_review_post_visit_status
+guardrails:
+  - 保持医生主导，诊后流程只做执行跟踪和反馈回流。
+  - 禁止自动调整医嘱。
+  - 禁止自动改药。
+  - 禁止自动产生新的医疗决策。
+  - 只有医生确认后的诊后摘要才能写入可信 Memory。
